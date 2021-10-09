@@ -7,7 +7,8 @@ const Create = () => {
 	const [blogText, setBlogText] = useState("");
 	const [authorName, setAuthorName] = useState("Ire");
 	const [validation, setValidation] = useState("Create blog");
-	const url = "http://localhost:8000/blogs";
+	// const url = "http://localhost:8000/blogs";
+	const url = "https://my-json-server.typicode.com/reedwane/db/blogs";
 
 	const handlePost = (e) => {
 		e.preventDefault();

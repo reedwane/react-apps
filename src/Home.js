@@ -2,7 +2,8 @@ import useFetch from "./useFetch";
 import BlogList from "./BlogList";
 
 const Home = () => {
-	const url = "http://localhost:8000/blogs";
+	// const url = "http://localhost:8000/blogs";
+	const url = "https://my-json-server.typicode.com/reedwane/db/blogs";
 	const { data, isPending, error } = useFetch(url);
 
 	return (

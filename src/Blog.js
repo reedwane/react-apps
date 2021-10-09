@@ -5,7 +5,8 @@ import { useHistory } from "react-router-dom";
 const Blog = () => {
 	const history = useHistory();
 	const { id } = useParams();
-	const url = "http://localhost:8000/blogs/" + id;
+	// const url = "http://localhost:8000/blogs/" + id;
+	const url = "https://my-json-server.typicode.com/reedwane/db/blogs/" + id;
 	let { data } = useFetch(url);
 
 	const handleDelete = (e) => {
