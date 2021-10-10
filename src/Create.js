@@ -36,7 +36,7 @@ const Create = () => {
 					console.log(err.message);
 				});
 
-			history.push("/");
+			history.push("/react-blog-app");
 		}
 	};
 

@@ -15,7 +15,7 @@ const Blog = () => {
 			method: "DELETE",
 		})
 			.then((res) => {
-				history.push("/");
+				history.push("/react-blog-app");
 			})
 			.catch((err) => console.log(err.message));
 	};

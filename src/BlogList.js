@@ -7,7 +7,7 @@ const BlogList = (props) => {
 		<div className="blog-list">
 			{data.map((blog) => (
 				<div className="blog-preview" key={blog.id}>
-					<Link to={"/blog/" + blog.id}>
+					<Link to={"/react-blog-app/blog/" + blog.id}>
 						<h2>{blog.title}</h2>
 						<p>Post by: {blog.author}</p>
 					</Link>

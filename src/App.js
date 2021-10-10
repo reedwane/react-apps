@@ -12,19 +12,19 @@ function App() {
 			<div className="App">
 				<Navbar />
 				<Switch>
-					<Route exact path="/">
+					<Route exact path="/react-blog-app">
 						<Home />
 					</Route>
 
-					<Route path="/create">
+					<Route path="/react-blog-app/create">
 						<Create />
 					</Route>
 
-					<Route path="/blog/:id">
+					<Route path="/react-blog-app/blog/:id">
 						<Blog />
 					</Route>
 
-					<Route path="/*">
+					<Route path="/react-blog-app/*">
 						<Error />
 					</Route>
 				</Switch>

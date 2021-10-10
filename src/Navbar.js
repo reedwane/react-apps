@@ -4,8 +4,8 @@ const Navbar = () => {
 		<div className="nav-bar">
 			<p className="logo">Cool Blog</p>
 			<div className="links">
-				<Link to="/">Home</Link>
-				<Link to="/create">Create Blog</Link>
+				<Link to="/react-blog-app">Home</Link>
+				<Link to="/react-blog-app/create">Create Blog</Link>
 			</div>
 		</div>
 	);
