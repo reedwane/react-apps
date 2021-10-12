@@ -17,6 +17,12 @@
       "body": "This is just a sample text",
       "author": "Ayo",
       "id": 3
+    },
+    {
+      "title": "cool",
+      "body": "we're cool, very very cool",
+      "author": "Ire",
+      "id": 4
     }
   ]
 }
