@@ -1,31 +1,33 @@
 import { useParams } from "react-router-dom";
-import useFetch from "./useFetch";
 import { useHistory } from "react-router-dom";
+import jsonData from "./data.json";
 
 const Blog = () => {
 	const history = useHistory();
 	const { id } = useParams();
-	// const url = "http://localhost:8000/blogs/" + id;
-	const url = "https://my-json-server.typicode.com/reedwane/db/blogs/" + id;
-	let { data } = useFetch(url);
+
+	let blogs = jsonData.blogs;
+
+	var blog;
+	var index;
+	for (let i = 0; i < blogs.length; i++) {
+		if (blogs[i].id.toString() === id) {
+			index = i;
+			blog = blogs[i];
+		}
+	}
 
 	const handleDelete = (e) => {
-		e.preventDefault();
-		fetch(url, {
-			method: "DELETE",
-		})
-			.then((res) => {
-				history.push("/react-blog-app");
-			})
-			.catch((err) => console.log(err.message));
+		jsonData.blogs.splice(index, 1);
+		history.push("/react-blog-app");
 	};
 	return (
 		<div>
-			{data && (
+			{blog && (
 				<article>
-					<h2>{data.title}</h2>
-					<p>By {data.author}</p>
-					<p>{data.body}</p>
+					<h2>{blog.title}</h2>
+					<p>By {blog.author}</p>
+					<p>{blog.body}</p>
 					<button onClick={handleDelete}>Delete Blog</button>
 				</article>
 			)}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import jsonData from "./data.json";
 
 const Create = () => {
 	const history = useHistory();
@@ -7,8 +8,8 @@ const Create = () => {
 	const [blogText, setBlogText] = useState("");
 	const [authorName, setAuthorName] = useState("Ire");
 	const [validation, setValidation] = useState("Create blog");
-	// const url = "http://localhost:8000/blogs";
-	const url = "https://my-json-server.typicode.com/reedwane/db/blogs";
+
+	var numberOfBlogs = jsonData.blogs.length + 1;
 
 	const handlePost = (e) => {
 		e.preventDefault();
@@ -21,20 +22,9 @@ const Create = () => {
 				title: title,
 				body: blogText,
 				author: authorName,
+				id: numberOfBlogs,
 			};
-
-			fetch(url, {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(data),
-			})
-				.then((res) => {
-					res.json();
-					console.log(res);
-				})
-				.catch((err) => {
-					console.log(err.message);
-				});
+			jsonData.blogs.push(data);
 
 			history.push("/react-blog-app");
 		}
